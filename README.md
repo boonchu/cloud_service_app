@@ -15,6 +15,7 @@ yum install apache-maven
   - compile with 'mvn package'
 
 ```
+$ rm -rf target
 $ mvn package
 $ jar -tvf /projects/cloud_service/target/MP1-1.0.jar
      0 Mon Aug 31 16:12:36 UTC 2015 META-INF/
@@ -26,5 +27,5 @@ $ jar -tvf /projects/cloud_service/target/MP1-1.0.jar
      0 Mon Aug 31 16:12:36 UTC 2015 META-INF/maven/MP1/MP1/
    139 Mon Aug 31 16:07:08 UTC 2015 META-INF/maven/MP1/MP1/pom.xml
     89 Mon Aug 31 16:07:14 UTC 2015 META-INF/maven/MP1/MP1/pom.properties
-$ java jar /projects/cloud_service/target/MP1-1.0.jar 123456
+$ java -cp /projects/cloud_service/target/MP1-1.0.jar MP1.MP1 123456 ./input.txt
 ```

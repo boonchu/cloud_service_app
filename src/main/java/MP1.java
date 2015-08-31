@@ -65,7 +65,7 @@ public class MP1 {
         }
         else {
             String userName = args[0];
-            String inputFileName = "./input.txt";
+            String inputFileName = args[1];
             MP1 mp = new MP1(userName, inputFileName);
             String[] topItems = mp.process();
             for (String item: topItems){
