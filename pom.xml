@@ -1,0 +1,17 @@
+<project>
+  <modelVersion>1.0.0</modelVersion>
+  <groupId>MP1</groupId>
+  <artifactId>java-archive</artifactId>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.1</version>
+      <configuration>
+        <source>1.5</source>
+        <target>1.5</target>
+      </configuration>
+    </plugin>
+  </plugins>
+  <version>1.0-SNAPSHOT</version>
+</project>
