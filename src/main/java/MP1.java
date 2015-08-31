@@ -1,3 +1,5 @@
+package MP1;
+
 import java.io.File;
 import java.lang.reflect.Array;
 import java.security.MessageDigest;
