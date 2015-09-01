@@ -1,4 +1,16 @@
-##### MP1 java project
+##### MP1 Word Count java project
+
+  * setup hotronwork Hadoop, download virtual box and horton works image for virtualbox
+	- http://hortonworks.com/hdp/downloads/
+  * import virtualbox horton works
+  * start virtualbox 
+
+```
+$ ssh root@127.0.0.1 -p 2222
+```
+
+  * access console (admin/admin access)
+	- http://127.0.0.1:8080/#/main/dashboard/metrics
 
   * Build Jar in 5 minutes
   * https://cwiki.apache.org/confluence/display/MAVEN/Tutorial%3A+Build+a+JAR+file+with+Maven+in+5+minutes
