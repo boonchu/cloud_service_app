@@ -56,14 +56,23 @@ public class MP1 {
       	int index = -1; 
 	String[] lines = new String[50000];
 
-        try(BufferedReader br = new BufferedReader(new FileReader(inputFileName))) {
+        BufferedReader br = new BufferedReader(new FileReader(inputFileName)) {
+
             for(String line; (line = br.readLine()) != null; ) {
                 index += 1;
                 if (Arrays.asList(indexes).indexOf(index) == -1) continue;
                 lines[index] = line;
             }            
+
         }
-        SortedMap<String, Integer> tokens = new TreeMap<String, Integer>();
+	
+	for (Integer i : indexes) {
+		StringTokenizer st = new StringTokenizer(line[i], delimiters);
+		while (st.hasMoreElements()) {
+				String str = st.nextElement().toString().toLowerCase().trim();
+				System.out.println(str);	
+		}
+	}
 
         return ret;
     }
