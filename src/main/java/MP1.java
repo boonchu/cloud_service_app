@@ -54,7 +54,7 @@ public class MP1 {
     public String[] process() throws Exception {
         String[] ret = new String[20];
        
-        //TODO
+        // process the strings
 
         return ret;
     }
@@ -65,7 +65,7 @@ public class MP1 {
         }
         else {
             String userName = args[0];
-            String inputFileName = args[1];
+            String inputFileName = "./input.txt";
             MP1 mp = new MP1(userName, inputFileName);
             String[] topItems = mp.process();
             for (String item: topItems){
