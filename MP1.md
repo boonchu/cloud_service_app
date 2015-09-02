@@ -13,15 +13,10 @@ MP1.java All you need to do is to make necessary changes in the file.
 			- information about string operations can be found in: http://docs.oracle.com/javase/7/docs/api/java/lang/String.html
 		- possible approach is to use lists. For more information see: http://docs.oracle.com/javase/7/docs/api/java/util/List.html#contains(java.l ang.Object)
 ￼		- possible approach is to use Maps in java. For more information see: http://docs.oracle.com/javase/7/docs/api/java/util/Map.html
-	5. Sort the list by frequency in a descending order. If two words have the same number count, use the lexigraphy. For example, the following is a sorted list: 
-
-```
-{(Orange, 3), (Apple, 2), (Banana, 2)}
-```
-
+	5. Sort the list by frequency in a descending order. If two words have the same number count, use the lexigraphy. For example, the following is a sorted list: {(Orange, 3), (Apple, 2), (Banana, 2)}
 	6. Return the top 20 items from the sorted list as a String Array. Here is the output of this application if “0” is used for user ID:
 		- approach is to use sort function in Java. For more information, see:
-		- http://docs.oracle.com/javase/7/docs/api/java/util/Collections.html#sort(jav a.util.List,%20java.util.Comparator)
+		- http://docs.oracle.com/javase/7/docs/api/java/util/Collections.html#sort(java.util.List,%20java.util.Comparator)
 
 ```
 de
@@ -45,7 +40,6 @@ f film
 ￼* Here is the output of this application if “1” is used for user ID:
 
 ```
-list
 de
 state
 school disambiguation county

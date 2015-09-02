@@ -65,7 +65,6 @@ public class MP1 {
         }
         SortedMap<String, Integer> tokens = new TreeMap<String, Integer>();
 
-
         return ret;
     }
 
@@ -75,7 +74,7 @@ public class MP1 {
         }
         else {
             String userName = args[0];
-            String inputFileName = args[1];
+            String inputFileName = "./input.txt";
             MP1 mp = new MP1(userName, inputFileName);
             String[] topItems = mp.process();
             for (String item: topItems){
