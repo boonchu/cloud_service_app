@@ -23,7 +23,9 @@ MP1.java All you need to do is to make necessary changes in the file.
 ```
 de
 state
-school disambiguation county
+school
+disambiguation
+county
 new
 john
 album
@@ -44,7 +46,9 @@ f film
 ```
 de
 state
-school disambiguation county
+school
+disambiguation
+county
 new
 john
 river
