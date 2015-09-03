@@ -1,11 +1,10 @@
-package MP1;
+package WordCount;
 
 import java.io.*;
+import java.util.*;
 import java.lang.reflect.Array;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.*;
-import java.util.Comparator;
 
 public class MP1 {
     Random generator;
@@ -53,30 +52,56 @@ public class MP1 {
     }
 
     public String[] process() throws Exception {
-        String[] ret = new String[20];
-      	int index = -1; 
-	String[] lines = new String[50000];
-
-        BufferedReader br = new BufferedReader(new FileReader(this.inputFileName));
+        String[] ret                      = new String[20];
+        ArrayList<String> list            = new ArrayList<String>();
+        BufferedReader br                 = new BufferedReader(new FileReader(this.inputFileName));
+        SortedMap<String, Integer> words  = new TreeMap<String, Integer>();
 
         // http://codereview.stackexchange.com/questions/44135/is-it-ok-to-use-while-line-r-readline-null-construct
         String line = null;
         while ((line = br.readLine()) != null) {
-          // index += 1;
-          // if (Arrays.asList(indexes).indexOf(index) == -1) 
-          //   continue;
-          // lines[index] = line;
+          list.add(line);  
         }
 	
-	// for (Integer i : indexes) {
-	//    StringTokenizer st = new StringTokenizer(line[i], delimiters);
-        //    while (st.hasMoreElements()) {
-        //		String str = st.nextElement().toString().toLowerCase().trim();
-        //		System.out.println(str);	
-        //    }
-	//}
+        // Divide each sentence into a list of words using delimiters provided in the “delimiters” variable.
+	for(String object: list){
+	  StringTokenizer st = new StringTokenizer(object, delimiters);
+          while (st.hasMoreElements()) {
+            // Make all the tokens lowercase and remove any tailing and leading spaces.
+            String str = st.nextElement().toString().toLowerCase().trim();
+            // Ignore all common words provided in the “stopWordsArray” variable.
+            if (Arrays.asList(stopWordsArray).indexOf(str) == -1){
+               /**
+                ** Keep track of word frequencies. To make the application more interesting, you have to 
+                ** process only the titles with certain indexes. These indexes are accessible using the 
+                ** “getIndexes” method, which returns an Integer Array with 0-based indexes to the input 
+                ** file. It is possible to have an index appear several times. In this case, just process 
+                ** the index multiple times. 
+                */
+               if (words.containsKey(str)) {
+                 words.put(str, words.get(str) + 1);
+               } else {
+                 words.put(str, 1); 
+               }
+            }
+          }
+        }
 
-        return ret;
+        /**
+         ** Sort the list by frequency in a descending order. If two words have the same number count, 
+         ** use the lexigraphy. For example, the following is a sorted list: 
+         ** {(Orange, 3), (Apple, 2), (Banana, 2)}
+         */
+        // words = SortByValue(words);
+
+        int count = 0;
+        for (Map.Entry<String, Integer> entry : words.entrySet()) {
+          if (count >= 20) break;
+          ret[count] = entry.getKey(); 
+          count++;
+        }
+
+       return ret;
     }
 
     public static void main(String[] args) throws Exception {
