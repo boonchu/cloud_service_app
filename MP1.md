@@ -1,5 +1,7 @@
 ##### Exercise: Selective Word Count
 
+ * FAQ (http://www.tutorialspoint.com/java/util/arrays_aslist.htm)
+
  * In this exercise you are to implement an application to find the top 20 words used in Wikipedia titles (provided). To make the implementation easier, we have provided a boilerplate for this exercise in the following file:
 MP1.java All you need to do is to make necessary changes in the file.
 
