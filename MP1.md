@@ -21,6 +21,7 @@ MP1.java All you need to do is to make necessary changes in the file.
 		- http://docs.oracle.com/javase/7/docs/api/java/util/Collections.html#sort(java.util.List,%20java.util.Comparator)
 
 ```
+list
 de
 state
 school
@@ -38,12 +39,14 @@ national
 saint
 william
 route
-f film
+f
+film
 ```
 
 ￼* Here is the output of this application if “1” is used for user ID:
 
 ```
+list
 de
 state
 school
