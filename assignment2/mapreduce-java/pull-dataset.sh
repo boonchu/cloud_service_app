@@ -6,4 +6,4 @@ wget -c http://www.gutenberg.lib.md.us/2/2/6/2267/2267.txt -P dataset
 hadoop fs -mkdir -p /tutorial/input
 hadoop fs -put ./dataset/* /tutorial/input
 hadoop fs -ls  /tutorial/input
-wget https://github.com/xldrx/mapreduce_examples/raw/master/tutorial/first_example/WordCount.java
+# wget https://github.com/xldrx/mapreduce_examples/raw/master/tutorial/first_example/WordCount.java
