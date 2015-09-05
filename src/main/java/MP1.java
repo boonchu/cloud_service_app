@@ -1,5 +1,10 @@
 package WordCount;
 
+# Word Count MP1 : Cloud Computing Application 
+# Link : Coursera.org
+# Boonchu Ngampairoijpibul
+# Date: September 5, 2015
+
 import java.io.*;
 import java.util.*;
 import java.lang.reflect.Array;
@@ -67,27 +72,26 @@ public class MP1 {
         // http://codereview.stackexchange.com/questions/44135/is-it-ok-to-use-while-line-r-readline-null-construct
         String line = null;
         while ((line = br.readLine()) != null) {
-          index += 1;
-          /**
-          ** To make the application more interesting, you have to 
-          ** process only the titles with certain indexes. These indexes are accessible using the 
-          ** “getIndexes” method, which returns an Integer Array with 0-based indexes to the input 
-          ** file. It is possible to have an index appear several times. In this case, just process 
-          ** the index multiple times. 
-          */
-	  if (Arrays.asList(indexes).indexOf(index) == -1) continue;
 	  // maximum array list size is 50k (used from getIndexes())
 	  if (list.size() < 50000) {
           	list.add(line);  
 	  }
         }
 	
+        /**
+        ** To make the application more interesting, you have to 
+        ** process only the titles with certain indexes. These indexes are accessible using the 
+        ** “getIndexes” method, which returns an Integer Array with 0-based indexes to the input 
+        ** file. It is possible to have an index appear several times. In this case, just process 
+        ** the index multiple times. 
+        */
         // Divide each sentence into a list of words using delimiters provided in the “delimiters” variable.
-	for(String object: list){
-	  StringTokenizer st = new StringTokenizer(object, delimiters);
-          while (st.hasMoreElements()) {
-            // Make all the tokens lowercase and remove any tailing and leading spaces.
-            String str = st.nextElement().toString().toLowerCase().trim();
+	for(int i : getIndexes()) {
+          // Make all the tokens lowercase and remove any tailing and leading spaces.
+          line = list.get(i).toLowerCase().trim();
+	  StringTokenizer st = new StringTokenizer(line, delimiters);
+          while (st.hasMoreTokens()) {
+            String str = st.nextToken();
 	    // System.out.println(str);
             // Ignore all common words provided in the “stopWordsArray” variable.
             if (Arrays.asList(stopWordsArray).indexOf(str) == -1){
@@ -109,19 +113,26 @@ public class MP1 {
          ** {(Orange, 3), (Apple, 2), (Banana, 2)}
          */
 	Map<String, Integer> sorted_words = sortByComparator(words, DESC);
+        // System.out.println(sorted_words);
 
 	/**
- 	 ** test case
+ 	 ** test case outputs at testcase.txt
          */
-        // int count = 0;
-        // for (Map.Entry<String, Integer> entry : sorted_words.entrySet())
-        // {
-        //   if (count >= 20) break;
-        //   System.out.println(entry.getKey() + ": "+ entry.getValue());
-        //   count++;
-        //}
-
         int count = 0;
+	try {
+          PrintWriter output = new PrintWriter(new FileWriter("./testcase.txt"));
+          for (Map.Entry<String, Integer> entry : sorted_words.entrySet())
+          {
+             if (count >= 20) break;
+             output.println(entry.getKey() + ": "+ entry.getValue());
+             count++;
+          }
+	  output.close();
+        } catch ( IOException e ) {
+        
+        }
+
+	count = 0;
         for (Map.Entry<String, Integer> entry : sorted_words.entrySet()) {
           if (count >= 20) break;
           ret[count] = entry.getKey(); 
