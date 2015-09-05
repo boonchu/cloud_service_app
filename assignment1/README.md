@@ -37,15 +37,44 @@ $ yum install apache-maven
 ```
 $ rm -rf target
 $ mvn package
-$ jar -tvf /projects/cloud_service/target/MP1-1.0.jar
-     0 Mon Aug 31 16:12:36 UTC 2015 META-INF/
-   129 Mon Aug 31 16:12:34 UTC 2015 META-INF/MANIFEST.MF
-     0 Mon Aug 31 16:12:36 UTC 2015 MP1/
-  4447 Mon Aug 31 16:12:36 UTC 2015 MP1/MP1.class
-     0 Mon Aug 31 16:12:36 UTC 2015 META-INF/maven/
-     0 Mon Aug 31 16:12:36 UTC 2015 META-INF/maven/MP1/
-     0 Mon Aug 31 16:12:36 UTC 2015 META-INF/maven/MP1/MP1/
-   139 Mon Aug 31 16:07:08 UTC 2015 META-INF/maven/MP1/MP1/pom.xml
-    89 Mon Aug 31 16:07:14 UTC 2015 META-INF/maven/MP1/MP1/pom.properties
-$ java -cp /projects/cloud_service/target/MP1-1.0.jar MP1.MP1 123456
+$ jar tvf /Users/boonchu/Documents/src/cloud_service_app/assignment1/target/MP1-1.0.jar
+     0 Sat Sep 05 04:21:02 PDT 2015 META-INF/
+   132 Sat Sep 05 04:21:00 PDT 2015 META-INF/MANIFEST.MF
+     0 Sat Sep 05 04:21:02 PDT 2015 WordCount/
+  1468 Sat Sep 05 04:21:02 PDT 2015 WordCount/ArrayDemo.class
+  1421 Sat Sep 05 04:21:02 PDT 2015 WordCount/MP1$1.class
+  8198 Sat Sep 05 04:21:02 PDT 2015 WordCount/MP1.class
+  1566 Sat Sep 05 04:21:02 PDT 2015 WordCount/readLines.class
+  1461 Sat Sep 05 04:21:02 PDT 2015 WordCount/SortedMapDemo$1.class
+  3207 Sat Sep 05 04:21:02 PDT 2015 WordCount/SortedMapDemo.class
+  1399 Sat Sep 05 04:21:02 PDT 2015 WordCount/TreeMapDemo.class
+     0 Sat Sep 05 04:21:02 PDT 2015 META-INF/maven/
+     0 Sat Sep 05 04:21:02 PDT 2015 META-INF/maven/MP1/
+     0 Sat Sep 05 04:21:02 PDT 2015 META-INF/maven/MP1/MP1/
+   241 Sat Sep 05 04:19:20 PDT 2015 META-INF/maven/MP1/MP1/pom.xml
+    89 Sat Sep 05 04:21:02 PDT 2015 META-INF/maven/MP1/MP1/pom.properties
+```
+
+```
+$ java -cp /Users/boonchu/Documents/src/cloud_service_app/assignment1/target/MP1-1.0.jar WordCount.MP1 0
+list
+de
+state
+school
+disambiguation
+county
+new
+john
+album
+c
+river
+station
+united
+highway
+national
+saint
+william
+route
+f
+film
 ```
