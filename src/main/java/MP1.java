@@ -1,9 +1,9 @@
 package WordCount;
 
-# Word Count MP1 : Cloud Computing Application 
-# Link : Coursera.org
-# Boonchu Ngampairoijpibul
-# Date: September 5, 2015
+// Word Count MP1 : Cloud Computing Application 
+// Link : Coursera.org
+// Boonchu Ngampairoijpibul
+// Date: September 5, 2015
 
 import java.io.*;
 import java.util.*;
