@@ -1,3 +1,3 @@
-export USER_ID=356928
-export DATASET_N=20
+export USER_ID=0
+export DATASET_N=5
 export DATASET_PATCH=5
