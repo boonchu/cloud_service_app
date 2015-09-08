@@ -151,6 +151,9 @@ public class MP1 {
         {
             public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2)
             {
+
+		// https://class.coursera.org/cloudapplications-001/forum/thread?thread_id=931
+		// return (o2.getValue() > o1.getValue())? 1 : (o1.getValue() > o2.getValue())? -1 : o1.getKey().compareTo(o2.getKey());
                 if (order)
                 {
                     return o1.getValue().compareTo(o2.getValue());
