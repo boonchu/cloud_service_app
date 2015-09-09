@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export USER_ID=0
-export DATASET_N=5
+export DATASET_N=500
 export DATASET_PATCH=5
 
 export HDFS_HOME=/mp2
@@ -9,7 +9,7 @@ export XL_HOME=./internal_use
 export PREFIX=$XL_HOME/tmp
 export DATA_HOME=$PREFIX/dataset
 export LOG=$PREFIX/logs.txt
-# export ERR=$PREFIX/errors.txt
+export ERR=$PREFIX/errors.txt
 export ERR=$LOG
 export HADOOP_CLASSPATH=$JAVA_HOME/lib/tools.jar
 export N=${3-10}
@@ -50,8 +50,24 @@ run_assignment() {
 # 	md5sum $PREFIX/output-TitleCount.txt | awk '{ print $1 }' >> $PREFIX/results.txt
 	
 	echo "result from USERID = 0"
-	cat $PREFIX/output-$1.txt
+	#cat $PREFIX/output-$1.txt
+	sort -r -n -k2 $PREFIX/output-$1.txt | head -10
 }
 
-echo "${green}Running Assingment A: Title Count${reset}"
-run_assignment TitleCount "-D stopwords=$HDFS_HOME/misc/stopwords.txt -D delimiters=$HDFS_HOME/misc/delimiters.txt  $HDFS_HOME/titles" "-n -k2 -r"
+#echo "${green}Running Assingment A: Title Count${reset}"
+#run_assignment TitleCount "-D stopwords=$HDFS_HOME/misc/stopwords.txt -D delimiters=$HDFS_HOME/misc/delimiters.txt  $HDFS_HOME/titles" "-n -k2 -r"
+
+#echo "${green}Running Assingment A: Top Titles${reset}"
+#run_assignment TopTitles "-D stopwords=$HDFS_HOME/misc/stopwords.txt -D delimiters=$HDFS_HOME/misc/delimiters.txt  -D N=$DATASET_N $HDFS_HOME/titles" "-n -k2 -r"
+
+#echo "${green}Running Assingment C: Top Title Statistics${reset}"
+#run_assignment TopTitleStatistics "-D stopwords=$HDFS_HOME/misc/stopwords.txt -D delimiters=$HDFS_HOME/misc/delimiters.txt -D N=$DATASET_N $HDFS_HOME/titles" "-k1"
+
+echo "${green}Running Assingment D: Orphan Pages${reset}"
+run_assignment OrphanPages "$HDFS_HOME/links"  "-n -k1"
+
+#echo "${green}Running Assingment E: Top Popular Links${reset}"
+#run_assignment TopPopularLinks "-D N=$DATASET_N $HDFS_HOME/links"  "-n -k2 -r"
+
+#echo "${green}Running Assingment F: Popularity League${reset}"
+#run_assignment PopularityLeague "-D league=$HDFS_HOME/misc/league.txt  $HDFS_HOME/links"  "-n -k2 -r"

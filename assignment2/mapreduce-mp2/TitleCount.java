@@ -2,8 +2,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
-import org.apache.hadoop.fs.*;
-import org.apache.hadoop.io.*;
+import org.apache.hadoop.fs.FSDataInputStream;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
@@ -18,9 +21,6 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
-import java.util.Set;
-import java.util.TreeSet;
-
 
 // >>> Don't Change
 public class TitleCount extends Configured implements Tool {
@@ -34,10 +34,10 @@ public class TitleCount extends Configured implements Tool {
     public int run(String[] args) throws Exception {
         Job job = Job.getInstance(this.getConf(), "Title Count");
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(ArrayWritable.class);
+        job.setOutputValueClass(IntWritable.class);
 
         job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(ArrayWritable.class);
+        job.setMapOutputValueClass(IntWritable.class);
 
         job.setMapperClass(TitleCountMap.class);
         job.setReducerClass(TitleCountReduce.class);
@@ -64,26 +64,10 @@ public class TitleCount extends Configured implements Tool {
         return everything.toString();
     }
 
-    public static class TextArrayWritable extends ArrayWritable {
-        public TextArrayWritable() {
-            super(Text.class);
-        }
-
-        public TextArrayWritable(String[] strings) {
-            super(Text.class);
-            Text[] texts = new Text[strings.length];
-            for (int i = 0; i < strings.length; i++) {
-                texts[i] = new Text(strings[i]);
-            }
-            set(texts);
-        }
-    }
-
-    public static class TitleCountMap extends Mapper<Object, Text, Text, ArrayWritable> {
+    public static class TitleCountMap extends Mapper<Object, Text, Text, IntWritable> {
 
         List<String> stopWords;
         String delimiters;
-	private TreeSet<Pair<Integer, String>> countToWordMap = new TreeSet<Pair<Integer, String>>();
 
         @Override
         protected void setup(Context context) throws IOException,InterruptedException {
@@ -99,106 +83,30 @@ public class TitleCount extends Configured implements Tool {
 
         @Override
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-            Integer count = Integer.parseInt(value.toString());
-            String word = key.toString();
 
-            countToWordMap.add(new Pair<Integer, String>(count, word));
+            final String line = value.toString();
+            final StringTokenizer tokenizer = new StringTokenizer(line, delimiters);
+            while(tokenizer.hasMoreTokens()) {
+                final String nextToken = tokenizer.nextToken().toLowerCase().trim();
+                if (stopWords.contains(nextToken))
+                    continue;
+                context.write(new Text(nextToken), new IntWritable(1));
+            }
 
-            if (countToWordMap.size() > 10) {
-                countToWordMap.remove(countToWordMap.first());
-            } 
         }
+    }
+
+    public static class TitleCountReduce extends Reducer<Text, IntWritable, Text, IntWritable> {
 
         @Override
-        protected void cleanup(Context context) throws IOException, InterruptedException {
-            for (Pair<Integer, String> item : countToWordMap) {
-                String[] strings = {item.second, item.first.toString()};
-                TextArrayWritable val = new TextArrayWritable(strings);
-                context.write(NullWritable.get(), val);
+        public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+
+            int sum = 0;
+            for (final IntWritable val : values) {
+                sum += val.get();
             }
-        }
-
-    }
-
-    public static class TitleCountReduce extends Reducer<Text, ArrayWritable, Text, ArrayWritable> {
-
-	private TreeSet<Pair<Integer, String>> countToWordMap = new TreeSet<Pair<Integer, String>>();
-
-        @Override
-        public void reduce(Text key, Iterable<TextArrayWritable> values, Context context) throws IOException, InterruptedException {
-
-            for (TextArrayWritable val: values) {
-                Text[] pair= (Text[]) val.toArray();
-
-                String word = pair[0].toString();
-                Integer count = Integer.parseInt(pair[1].toString());
-
-                countToWordMap.add(new Pair<Integer, String>(count, word));
-
-                if (countToWordMap.size() > 10) {
-                    countToWordMap.remove(countToWordMap.first());
-                }
-            }
-
-            for (Pair<Integer, String> item: countToWordMap) {
-                Text word = new Text(item.second);
-                IntWritable value = new IntWritable(item.first);
-                context.write(word, value);
-            }
+            context.write(key, new IntWritable(sum));
 
         }
-    }
-}
-
-class Pair<A extends Comparable<? super A>,
-        B extends Comparable<? super B>>
-        implements Comparable<Pair<A, B>> {
-
-    public final A first;
-    public final B second;
-
-    public Pair(A first, B second) {
-        this.first = first;
-        this.second = second;
-    }
-
-    public static <A extends Comparable<? super A>,
-            B extends Comparable<? super B>>
-    Pair<A, B> of(A first, B second) {
-        return new Pair<A, B>(first, second);
-    }
-
-    @Override
-    public int compareTo(Pair<A, B> o) {
-        int cmp = o == null ? 1 : (this.first).compareTo(o.first);
-        return cmp == 0 ? (this.second).compareTo(o.second) : cmp;
-    }
-
-    @Override
-    public int hashCode() {
-        return 31 * hashcode(first) + hashcode(second);
-    }
-
-    private static int hashcode(Object o) {
-        return o == null ? 0 : o.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (!(obj instanceof Pair))
-            return false;
-        if (this == obj)
-            return true;
-        return equal(first, ((Pair<?, ?>) obj).first)
-                && equal(second, ((Pair<?, ?>) obj).second);
-    }
-
-    private boolean equal(Object o1, Object o2) {
-        return o1 == o2 || (o1 != null && o1.equals(o2));
-    }
-
-    @Override
-    public String toString() {
-        return "(" + first + ", " + second + ')';
     }
 }
