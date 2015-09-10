@@ -78,3 +78,14 @@ route
 f
 film
 ```
+
+###### Why do we need ramdon generator?
+  * https://class.coursera.org/cloudapplications-001/forum/thread?thread_id=495
+
+```
+Let's work this backwards.  Your code needs to process 10,000 lines of input from a 50,000 line file.  We'd like the series of lines that are chosen to be different for each student, but the solution should be verifiable (if you provide the same user ID, you should always get the same result).  To get the list of lines to process, you should call getIndexes().
+
+Now, getIndexes() uses a random number generator to create the list of lines to return.  A random number generator uses a seed value as a starting point for generating it's sequence of numbers.  If the random number generator is seeded with the same number, it will produce the same sequence.  So it makes sense to seed the random number generator with a value derived from your student ID, that way each time you run the program, you'll get the exact same stream of random numbers, and it'll be unique for each student.
+
+The problem is that even if student IDs go up to 1,000,000 that can be represented in roughly 20 bits.  The leading 44 bits will always be 0.  That's probably fine for this application, but if security is a concern, it makes the seed far too easy to guess.  And if we can guess the seed, we can crack the code.
+```

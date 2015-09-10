@@ -42,10 +42,26 @@ public class MP1 {
         this.generator = new Random(longSeed);
     }
 
+    // getIndexes() uses a random number generator to create the list of lines to return.
     Integer[] getIndexes() throws NoSuchAlgorithmException {
         Integer n = 10000;
         Integer number_of_lines = 50000;
         Integer[] ret = new Integer[n];
+	
+	/* A random number generator uses a seed value as a starting point for generating 
+        ** it's sequence of numbers.  If the random number generator is seeded with the 
+        ** same number, it will produce the same sequence.  So it makes sense to seed the 
+        ** random number generator with a value derived from your student ID, that way each 
+        ** time you run the program, you'll get the exact same stream of random numbers, 
+        ** and it'll be unique for each student.
+	**
+	** Frank Yellin replied:
+	** Given that Random is not a particularly good random number generator (I wrote 
+	** java.util.Random;  I'm allowed to say that), initializing it with a cryptographically 
+	** secure seed seems to be a bit of overkill.  If it were me, I would have used:
+        **  0xfedcba987654321L * studentID as the seed.  That's more than sufficient to 
+	** give each student a different set of indexes, which is the goal.
+	*/
         this.initialRandomGenerator(this.userName);
         for (int i = 0; i < n; i++) {
             ret[i] = generator.nextInt(number_of_lines);
