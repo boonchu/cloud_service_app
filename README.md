@@ -14,6 +14,12 @@
 ###### Links
  * https://class.coursera.org/cloudapplications-001/forum/thread?thread_id=204
 
+###### HDFS 
+
+```
+su - hdfs -c "hdfs dfsadmin -report"
+```
+
 ```
 Java books & tutorials: 
 

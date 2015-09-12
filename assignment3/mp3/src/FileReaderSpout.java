@@ -27,6 +27,7 @@ public class FileReaderSpout implements IRichSpout {
 
 
     ------------------------------------------------- */
+    
 
     this.context = context;
     this._collector = collector;
