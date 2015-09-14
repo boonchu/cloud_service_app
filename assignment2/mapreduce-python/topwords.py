@@ -18,7 +18,7 @@ if __name__ == "__main__":
     lines = sc.textFile(sys.argv[1], 1)
     counts = lines.flatMap(lambda x: re.split(r"[ \t,;\.\?!-:@\[\]\(\){}_\*/]+", x)) \
                   .filter(lambda x: x.lower() not in common_words and len(x) > 0) \
-                  .map(lambda x: (x, 1)) \
+                  .map(lambda x: (x.lower(), 1)) \
                   .reduceByKey(add) \
                   .map(lambda x: (x[1],x[0])) \
                   .sortByKey(ascending=False) \

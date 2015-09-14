@@ -14,3 +14,52 @@ The class TopWordsReduce then takes the output of the cleanup function and conve
 
 So, I can see the necessity of the cleanup function and I can only assume it is called by Hadoop but I must admit it would have been nice to have some more guidance on this.
 ```
+
+  * Tez?
+	- http://hortonworks.com/hadoop/tez/
+
+  * YARN?
+	- http://hortonworks.com/get-started/yarn/
+
+  * Log on Hardoop
+	- https://class.coursera.org/cloudapplications-001/forum/thread?thread_id=837
+
+```
+To setup the logging, I used Apache commons logging (here from the OrphanPages exercise):
+
+Imports:
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+Setup the log:
+
+public static class LinkCountMap extends Mapper<Object, Text, IntWritable, IntWritable> {
+
+    public static final Log log = LogFactory.getLog(LinkCountMap.class);
+
+Later in the LinkCountMap class:
+
+log.info(new Integer(parts[0]) + "," + 0);
+
+
+When you run a Hadoop MapReduce application, in the output you'll get an application ID:
+
+15/09/04 18:17:06 INFO impl.YarnClientImpl: Submitted application application_1441239124625_0048
+
+"application_1441239124625_0048" in the log entry above is the application ID for this execution of a MapReduce job.
+
+In an SSH session to the HortonWorks VM, you can look at the logs after the job is completed running (usually available after a complete write to HDFS).
+
+Use application ID to access the Container log files
+#> yarn logs -applicationId application_1441239124625_0048
+
+As part of the output will be:
+
+2015-09-04 18:09:07,400 INFO [main] OrphanPages$LinkCountMap: 1149406,0
+2015-09-04 18:09:07,400 INFO [main] OrphanPages$LinkCountMap: 1149421,0
+2015-09-04 18:09:07,400 INFO [main] OrphanPages$LinkCountMap: 1149606,0
+2015-09-04 18:09:07,400 INFO [main] OrphanPages$LinkCountMap: 1149764,0
+2015-09-04 18:09:07,401 INFO [main] OrphanPages$LinkCountMap: 1149779,0
+
+```
