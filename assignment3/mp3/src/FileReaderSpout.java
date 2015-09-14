@@ -12,10 +12,15 @@ import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Values;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 public class FileReaderSpout implements IRichSpout {
+
+  public static final Log log = LogFactory.getLog(FileReaderSpout.class);
+
   private SpoutOutputCollector _collector;
   private TopologyContext context;
-
 
   @Override
   public void open(Map conf, TopologyContext context,
@@ -24,10 +29,23 @@ public class FileReaderSpout implements IRichSpout {
      /*
     ----------------------TODO-----------------------
     Task: initialize the file reader
-
-
     ------------------------------------------------- */
     
+    final String datafile = (String) conf.get("datafile");
+
+/*
+    log.info("[DEBUG] File Name is: datafile=" + new String(datafile));
+*/
+
+    try {
+
+	final FileReader filehandler = new FileReader(datafile);
+	final BufferedReader br = new BufferedReader(filehandler); 
+	context.setTaskData("reader", br);
+
+    } catch (FileNotFoundException e) {
+	e.printStackTrace();
+    }	
 
     this.context = context;
     this._collector = collector;
@@ -35,15 +53,23 @@ public class FileReaderSpout implements IRichSpout {
 
   @Override
   public void nextTuple() {
-
      /*
     ----------------------TODO-----------------------
     Task:
     1. read the next line and emit a tuple for it
     2. don't forget to sleep when the file is entirely read to prevent a busy-loop
-
     ------------------------------------------------- */
 
+	final BufferedReader br = (BufferedReader) this.context.getTaskData("reader");
+
+	final String line;
+	try {
+		if ((line = br.readLine()) != null) {
+			_collector.emit(new Values(line));
+		} 
+	} catch (IOException e) {
+		e.printStackTrace();
+	}	
 
   }
 
@@ -59,9 +85,9 @@ public class FileReaderSpout implements IRichSpout {
    /*
     ----------------------TODO-----------------------
     Task: close the file
-
-
     ------------------------------------------------- */
+
+	BufferedReader br = (BufferedReader) this.context.getTaskData("reader");
 
   }
 

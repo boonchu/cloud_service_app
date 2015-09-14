@@ -27,7 +27,6 @@ public class TopWordFinderTopologyPartD {
     Config config = new Config();
     config.setDebug(true);
 
-
     /*
     ----------------------TODO-----------------------
     Task: wire up the topology
@@ -38,12 +37,15 @@ public class TopWordFinderTopologyPartD {
     FileReaderSpout -> "spout"
     SplitSentenceBolt -> "split"
     WordCountBolt -> "count"
-	NormalizerBolt -> "normalize"
+    NormalizerBolt -> "normalize"
     TopNFinderBolt -> "top-n"
-
-
     ------------------------------------------------- */
 
+    builder.setSpout("spout", new FileReaderSpout(), 1);
+    builder.setBolt("split", new SplitSentenceBolt(), 8).shuffleGrouping("spout");
+    builder.setBolt("normalize", new NormalizerBolt(), 8).shuffleGrouping("split");
+    builder.setBolt("count", new WordCountBolt(), 12).fieldsGrouping("normalize", new Fields("word"));
+    builder.setBolt("top-n", new TopNFinderBolt(10), 1).shuffleGrouping("count");
 
     config.setMaxTaskParallelism(3);
 
