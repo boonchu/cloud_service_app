@@ -53,12 +53,15 @@ cat internal_use/tmp/output-TitleCount.txt
 
    * Adding log info to Orphan Pages
 	- Imports Apache Commons Loggins
+	- Setup Log at LinkCountMap class
+	- add log.info at LinkCountMap class
+	- run a Hadoop MapReduce application, in the output you'll get an application ID:
+	- "application_1441239124625_0048" in the log entry above is the application ID for this execution of a MapReduce job.
 
 ```
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 ```
-	- Setup Log
 
 ```
 public static class LinkCountMap extends Mapper<Object, Text, IntWritable, IntWritable> {
@@ -66,13 +69,9 @@ public static class LinkCountMap extends Mapper<Object, Text, IntWritable, IntWr
     public static final Log log = LogFactory.getLog(LinkCountMap.class);
 ```
 
-	- at LinkCountMap class
-
 ```
 log.info(new Integer(parts[0]) + "," + 0);
 ```
-	- run a Hadoop MapReduce application, in the output you'll get an application ID:
-	- "application_1441239124625_0048" in the log entry above is the application ID for this execution of a MapReduce job.
 
 ```
 # yarn logs -applicationId application_1442201920772_0003 | grep OrphanPages\$LinkCountMap | head -10
@@ -90,5 +89,4 @@ log.info(new Integer(parts[0]) + "," + 0);
 2015-09-14 04:30:59,305 INFO [main] OrphanPages$LinkCountMap: 436916,0
 2015-09-14 04:30:59,320 INFO [main] OrphanPages$LinkCountMap: 437687,0
 2015-09-14 04:30:59,321 INFO [main] OrphanPages$LinkCountMap: 483005,0
-
 ```
