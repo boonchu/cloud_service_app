@@ -16,4 +16,5 @@ if __name__ == "__main__":
                   .map(lambda x: (x, 1)) \
                   .reduceByKey(add)
 
+    counts.saveAsTextFile(sys.argv[2])
     sc.stop()
