@@ -83,9 +83,22 @@ $ storm jar target/storm-example-0.0.1-SNAPSHOT.jar TopWordFinderTopologyPartC -
     - printMap() method that prints the top-N words
     - emit with empty word
 	- https://class.coursera.org/cloudapplications-001/forum/thread?thread_id=1112
+        - https://class.coursera.org/cloudapplications-001/forum/thread?thread_id=1029
 
 ```
 22919 [Thread-11-top-n] INFO  backtype.storm.daemon.task - Emitting: top-n default [top-words = [ ( , 1507) , (macb , 132) , (thou , 84) , (haue , 122) , (rosse , 48) , (enter , 81) , (th , 55) , (who , 52) , (yet , 57) , (shall , 68) ]]
+
+$ sed 's/\.//g;s/\(.*\)/\L\1/;s/\ /\n/g' data.txt | sort | uniq -c | grep macb
+    137 macb
+     14 macbeth
+     19 macbeth,
+      5 macbeth,
+      1 macbeth:
+      1 macbeth:
+      1 macbeth?
+      2 macbeth*********************
+     24 macbeth
+      4 macbeth
 ```
 
     - Topology:

@@ -26,6 +26,7 @@ public class NormalizerBolt extends BaseBasicBolt {
     Task:
      1. make the words all lower case
      2. remove the common words
+     3. remove empty string
     ------------------------------------------------- */
     final String words = tuple.getString(0).toLowerCase();
     if (!commonWords.contains(words))
