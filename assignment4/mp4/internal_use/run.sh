@@ -12,7 +12,9 @@ run_assignment() {
 
 	echo "${yellow}	Run${reset}"
 	cd $PREFIX
-	java $1 > $1.output 2> $1.log
+	# fix bug 
+	# https://class.coursera.org/cloudapplications-001/forum/thread?thread_id=1219
+	java $1 > $PREFIX/$1.output 2> $PREFIX/$1.log
 	cd -
 
 	echo "${yellow}	Collect the Output${reset}"

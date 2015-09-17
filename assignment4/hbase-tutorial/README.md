@@ -24,6 +24,7 @@ To disable auto-start of HBase do
 
 ```
 $ export CLASSPATH=$(/usr/bin/hbase classpath)
+$ export HADOOP_CLASSPATH=$(hbase classpath)
 $ echo $CLASSPATH | tr ":" "\n" | grep hadoop | head
 /usr/hdp/2.3.0.0-2557/hbase/lib/hbase-hadoop2-compat-1.1.1.2.3.0.0-2557.jar
 /usr/hdp/2.3.0.0-2557/hbase/lib/hbase-hadoop2-compat.jar
@@ -41,8 +42,8 @@ $ mvn clean package
   * Create Table 'emp'
 
 ```
-$ cd target
-$ hadoop jar hbase.example-1.0-SNAPSHOT.jar CreateTable
+$ echo "disable 'emp'; drop 'emp'" | hbase shell
+$ cd target ; hadoop jar hbase.example-1.0-SNAPSHOT.jar CreateTable
 $ hbase shell
 hbase(main):004:0> describe 'emp'
 Table emp is ENABLED
@@ -64,27 +65,25 @@ hbase(main):006:0> drop 'emp'
   * List tables
 
 ```
-$ cd target
-$ hadoop jar hbase.example-1.0-SNAPSHOT.jar ListTables
+$ cd target ; hadoop jar hbase.example-1.0-SNAPSHOT.jar ListTables
 ```
 
   * Insert Data 
 
 ```
-$ cd target
-$ hadoop jar hbase.example-1.0-SNAPSHOT.jar InsertData
+$ cd target ; hadoop jar hbase.example-1.0-SNAPSHOT.jar InsertData
 ```
 
   * Retrieve Data
 
 ```
-$ hadoop jar hbase.example-1.0-SNAPSHOT.jar RetrieveData
+$ cd target ; hadoop jar hbase.example-1.0-SNAPSHOT.jar RetrieveData
 name: raju city: hyderabad
 ```
 
   * Scan Table
 
 ```
-$ hadoop jar hbase.example-1.0-SNAPSHOT.jar ScanTable
+$ cd target ; hadoop jar hbase.example-1.0-SNAPSHOT.jar ScanTable
 Found row : keyvalues={row1/personal:city/1442417706474/Put/vlen=9/seqid=0, row1/personal:name/1442417706474/Put/vlen=4/seqid=0}
 ```
