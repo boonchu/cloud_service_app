@@ -8,3 +8,8 @@
   * Thread discussion
 	- https://class.coursera.org/cloudapplications-001/forum/thread?thread_id=1204
 	- https://class.coursera.org/cloudapplications-001/forum/thread?thread_id=1189
+	- https://class.coursera.org/cloudapplications-001/forum/thread?thread_id=1186
+
+###### Spark
+  * Start with own Spark cluster
+	- http://www.mccarroll.net/blog/pyspark/

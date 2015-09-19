@@ -1,0 +1,20 @@
+HBase Shell; enter 'help<RETURN>' for list of supported commands.
+Type "exit<RETURN>" to leave the HBase Shell
+Version 1.1.1.2.3.0.0-2557, r6a55f21850cfccf19fa651b9e2c74c7f99bbd4f9, Tue Jul 14 09:41:13 EDT 2015
+
+scan 'powers'
+ROW  COLUMN+CELL
+ row1 column=personal:hero, timestamp=1442687878867, value=superman
+ row1 column=personal:power, timestamp=1442687878867, value=strength
+ row1 column=professional:name, timestamp=1442687878867, value=clark
+ row1 column=professional:xp, timestamp=1442687878867, value=100
+ row2 column=personal:hero, timestamp=1442687878887, value=batman
+ row2 column=personal:power, timestamp=1442687878887, value=money
+ row2 column=professional:name, timestamp=1442687878887, value=bruce
+ row2 column=professional:xp, timestamp=1442687878887, value=50
+ row3 column=personal:hero, timestamp=1442687878893, value=wolverine
+ row3 column=personal:power, timestamp=1442687878893, value=healing
+ row3 column=professional:name, timestamp=1442687878893, value=logan
+ row3 column=professional:xp, timestamp=1442687878893, value=75
+3 row(s) in 0.2730 seconds
+
