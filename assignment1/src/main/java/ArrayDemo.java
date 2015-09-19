@@ -13,10 +13,15 @@ public class ArrayDemo {
        public static void main (String args[]) {
 
          // create an copy of "a" array of strings
-         String a[] = new String[]{"abc","klm","xyz","pqr"};
+         String a[] = new String[] {"abc","klm","xyz","pqr"};
          ArrayList<String> list = new ArrayList<String>(Arrays.asList(a));
+	 ArrayListDemo(list);
 
-         // printing the list
+       }
+
+       private static void ArrayListDemo(ArrayList<String> list) {
+	
+        // printing the list
          System.out.println("Index for pqr is " + list.indexOf("pqr"));
          System.out.println("The list is:" + list);
 
@@ -25,6 +30,6 @@ public class ArrayDemo {
          list.add("uwx");
          System.out.println("Index for uwx is " + list.indexOf("uwx"));
          System.out.println("The list is:" + list);
-
+	 
        }
 }

@@ -29,15 +29,22 @@ $ wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.
 $ yum install apache-maven
 ```
 
+* Train yourself a data structure in Java
+  - review source src/main/java/ArrayDemo.java
+
+```
+$ mvn clean package
+$ java -cp ./target/MP1-1.0.jar WordCount/ArrayDemo
+```
+
 * Steps
   - source must be in ./src/main/java
   - header must exist with string 'pacakge MP1;'
   - compile with 'mvn package'
 
 ```
-$ rm -rf target
-$ mvn package
-$ jar tvf /Users/boonchu/Documents/src/cloud_service_app/assignment1/target/MP1-1.0.jar
+$ mvn clean package
+$ jar tvf ./target/MP1-1.0.jar
      0 Sat Sep 05 04:21:02 PDT 2015 META-INF/
    132 Sat Sep 05 04:21:00 PDT 2015 META-INF/MANIFEST.MF
      0 Sat Sep 05 04:21:02 PDT 2015 WordCount/
@@ -56,7 +63,7 @@ $ jar tvf /Users/boonchu/Documents/src/cloud_service_app/assignment1/target/MP1-
 ```
 
 ```
-$ java -cp /Users/boonchu/Documents/src/cloud_service_app/assignment1/target/MP1-1.0.jar WordCount.MP1 0
+$ java -cp ./target/MP1-1.0.jar WordCount.MP1 0
 list
 de
 state
