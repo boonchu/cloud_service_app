@@ -35,6 +35,7 @@ $ yum install apache-maven
 ```
 $ mvn clean package
 $ java -cp ./target/MP1-1.0.jar WordCount/ArrayDemo
+$ mvn clean
 ```
 
 * Steps
@@ -84,6 +85,7 @@ william
 route
 f
 film
+$ mvn clean
 ```
 
 ###### Why do we need ramdon generator?
