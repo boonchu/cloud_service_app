@@ -6,15 +6,14 @@
 <script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
 <script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
 mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Hortonworks","wgTitle":"Hortonworks","wgCurRevisionId":675401845,"wgRevisionId":675401845,"wgArticleId":35142247,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["All articles with unsourced statements","Articles with unsourced statements from October 2013","Software companies based in the San Francisco Bay Area","Companies based in Sunnyvale, California","Privately held companies in the United States","Hadoop","Apache Software Foundation","Companies established in 2011"],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb",
-"Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Hortonworks","wgRelevantArticleId":35142247,"wgIsProbablyEditable":!0,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wikilove-recipient":"","wikilove-anon":0,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!1,"publish":!1},"wgBetaFeaturesFeatures":[],"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":!0,"usePageDescriptions":!0},"wgGatherShouldShowTutorial":!0,"wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q5906990","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","ext.centralauth.centralautologin","mmv.head","ext.gadget.WatchlistBase","ext.gadget.WatchlistGreenIndicators","ext.visualEditor.desktopArticleTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+"Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Hortonworks","wgRelevantArticleId":35142247,"wgIsProbablyEditable":!0,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wikilove-recipient":"","wikilove-anon":0,"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,"preview":!1,"publish":!1},"wgBetaFeaturesFeatures":[],"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":!0,"usePageDescriptions":!0},"wgGatherShouldShowTutorial":!0,"wgGatherEnableSample":0,"wgULSAcceptLanguageList":[],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q5906990","wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","ext.centralauth.centralautologin","mmv.head","ext.gadget.WatchlistBase","ext.gadget.WatchlistGreenIndicators","ext.visualEditor.desktopArticleTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
 } );</script>
-<link rel="stylesheet" href="https://en.wikipedia.org/w/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.WatchlistBase%2CWatchlistGreenIndicators%7Cext.uls.nojs%7Cext.visualEditor.desktopArticleTarget.noscript%7Cmediawiki.legacy.shared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector" />
-<link rel="stylesheet" href="https://en.wikipedia.org/w/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint&amp;only=styles&amp;skin=vector" media="print" />
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.WatchlistBase%2CWatchlistGreenIndicators%7Cext.uls.nojs%7Cext.visualEditor.desktopArticleTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector" />
 <meta name="ResourceLoaderDynamicStyles" content="" />
-<link rel="stylesheet" href="https://en.wikipedia.org/w/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector" />
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector" />
 <style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
-<script async="" src="https://en.wikipedia.org/w/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
-<meta name="generator" content="MediaWiki 1.26wmf22" />
+<script async="" src="/w/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26wmf23" />
 <link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Hortonworks" />
 <link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Hortonworks&amp;action=edit" />
 <link rel="edit" title="Edit this page" href="/w/index.php?title=Hortonworks&amp;action=edit" />
@@ -26,7 +25,7 @@ mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgName
 <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
 <link rel="canonical" href="https://en.wikipedia.org/wiki/Hortonworks" />
 <link rel="dns-prefetch" href="//meta.wikimedia.org" />
-<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static/1.26wmf22/skins/Vector/csshover.min.htc")}</style><![endif]-->
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static/1.26wmf23/skins/Vector/csshover.min.htc")}</style><![endif]-->
 </head>
 <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Hortonworks skin-vector action-view">
 		<div id="mw-page-base" class="noprint"></div>
@@ -152,37 +151,37 @@ mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgName
 
 <!-- 
 NewPP limit report
-Parsed by mw1077
-Cached time: 20150831062533
+Parsed by mw1214
+Cached time: 20150916131515
 Cache expiry: 2592000
-Dyanmic content: false
-CPU time usage: 0.317 seconds
-Real time usage: 0.371 seconds
+Dynamic content: false
+CPU time usage: 0.246 seconds
+Real time usage: 0.297 seconds
 Preprocessor visited node count: 1389/1000000
 Preprocessor generated node count: 0/1500000
 Post‐expand include size: 30628/2097152 bytes
 Template argument size: 989/2097152 bytes
 Highest expansion depth: 11/40
 Expensive parser function count: 1/500
-Lua time usage: 0.112/10.000 seconds
+Lua time usage: 0.090/10.000 seconds
 Lua memory usage: 3.44 MB/50 MB
 Number of Wikibase entities loaded: 1-->
 
 <!-- 
 Transclusion expansion time report (%,ms,calls,template)
-100.00%  302.985      1 - -total
- 40.64%  123.144      1 - Template:Reflist
- 29.12%   88.229      1 - Template:Infobox_company
- 26.52%   80.342      1 - Template:Infobox
- 24.80%   75.150     12 - Template:Cite_news
- 13.26%   40.172      1 - Template:Citation_needed
- 11.32%   34.312      1 - Template:Fix
-  9.93%   30.090      2 - Template:Category_handler
-  9.49%   28.755      1 - Template:Official_website
-  8.85%   26.801      2 - Template:URL
+100.00%  249.553      1 - -total
+ 39.11%   97.612      1 - Template:Reflist
+ 31.37%   78.288      1 - Template:Infobox_company
+ 28.72%   71.668      1 - Template:Infobox
+ 24.04%   59.988     12 - Template:Cite_news
+ 14.51%   36.222      1 - Template:Citation_needed
+ 12.23%   30.519      1 - Template:Fix
+ 10.83%   27.020      2 - Template:Category_handler
+  7.50%   18.712      1 - Template:Official_website
+  7.07%   17.642      2 - Template:URL
 -->
 
-<!-- Saved in parser cache with key enwiki:pcache:idhash:35142247-0!*!0!!en!4!* and timestamp 20150831062533 and revision id 675401845
+<!-- Saved in parser cache with key enwiki:pcache:idhash:35142247-0!*!0!!en!4!* and timestamp 20150916131515 and revision id 675401845
  -->
 <noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
 						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Hortonworks&amp;oldid=675401845">https://en.wikipedia.org/w/index.php?title=Hortonworks&amp;oldid=675401845</a>"					</div>
@@ -261,7 +260,7 @@ Transclusion expansion time report (%,ms,calls,template)
 
 			<div class="body">
 									<ul>
-						<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>					</ul>
+						<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
 							</div>
 		</div>
 			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
@@ -308,18 +307,18 @@ additional terms may apply.  By using this site, you agree to the <a href="//wik
 											<li id="footer-copyrightico">
 							<a href="//wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>						</li>
 											<li id="footer-poweredbyico">
-							<a href="//www.mediawiki.org/"><img src="https://en.wikipedia.org/static/1.26wmf22/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="https://en.wikipedia.org/static/1.26wmf22/resources/assets/poweredby_mediawiki_132x47.png 1.5x, https://en.wikipedia.org/static/1.26wmf22/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+							<a href="//www.mediawiki.org/"><img src="/static/1.26wmf23/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/1.26wmf23/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /static/1.26wmf23/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
 									</ul>
 						<div style="clear:both"></div>
 		</div>
 		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
 mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","user":"ready","user.groups":"ready"});
 } );</script>
-<link rel="stylesheet" href="https://en.wikipedia.org/w/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.wikimediaBadges&amp;only=styles&amp;skin=vector" />
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.wikimediaBadges&amp;only=styles&amp;skin=vector" />
 <script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
-mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.cirrusSearch.loggingSchema","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.statsd","ext.wikimediaEvents.geoFeatures","ext.navigationTiming","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.visualEditor.targetLoader","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"]);
+mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.cirrusSearch.loggingSchema","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.geoFeatures","ext.navigationTiming","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.visualEditor.targetLoader","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"]);
 } );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
-mw.config.set({"wgBackendResponseTime":145,"wgHostname":"mw1098"});
+mw.config.set({"wgBackendResponseTime":64,"wgHostname":"mw1258"});
 } );</script>
 	</body>
 </html>
