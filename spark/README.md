@@ -15,3 +15,9 @@
 ###### Spark Tutorial (U. of Maryland)
   * http://lintool.github.io/SparkTutorial/
 
+###### Spark Pi Calculator
+
+```
+# ./pi.py 2>/dev/null
+Pi is roughly 3.133120
+```
