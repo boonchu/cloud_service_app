@@ -1,6 +1,9 @@
 ###### Cloud Computing Application
  * [Hadoop api.org.apache.hadoop lib](https://hadoop.apache.org/docs/r2.7.0/api/org/apache/hadoop/)
  * [Storm doc](http://nathanmarz.github.io/storm/)
+
+###### Storm vs MapReduce
+ * http://datascience.stackexchange.com/questions/227/tradeoffs-between-storm-and-hadoop-mapreduce
  
 ###### Assignment 1
  * [link](https://github.com/boonchu/cloud_service_app/tree/master/assignment1)
