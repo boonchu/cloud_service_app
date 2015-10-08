@@ -1,6 +1,7 @@
 ###### Giraph tutorials
 
   * https://www.codatlas.com/github.com/apache/giraph/trunk/giraph-examples/src/main/java/org/apache/giraph/examples/
+  * http://stackoverflow.com/questions/29095959/gremlin-giraph-graphx-on-titandb
 
 ###### Giraph examples
 
