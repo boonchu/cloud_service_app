@@ -74,7 +74,8 @@ public class SuperTable{
       	for (Result result : scanner) {
       		System.out.println(result);
       	}
-      	//closing the scanner
+      	// closing the scanner
+      	// https://class.coursera.org/cloudapplications-001/forum/thread?thread_id=1354
       	scanner.close();
       }
       
