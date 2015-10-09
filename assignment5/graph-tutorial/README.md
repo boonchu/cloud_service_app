@@ -30,6 +30,8 @@ $ spark-submit --class KMeansExample target/mllib.mp-1.0-SNAPSHOT.jar 3 /mllib-t
 ["Hornet Sportabout", "Duster 360", "Merc 450SE", "Merc 450SL", "Merc 450SLC", "Cadillac Fleetwood", "Lincoln Continental", "Chrysler Imperial", "Dodge Challenger", "AMC Javelin", "Camaro Z28", "Pontiac Firebird", "Ford Pantera L", "Maserati Bora", ]
 ```
 
+##### Naive Bayes classifier
+
  * data set description
 
 ```
