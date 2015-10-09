@@ -38,13 +38,16 @@ public final class NaiveBayesExample {
             System.exit(1);
         }
         String training_data_path = args[0];
-        String test_data_path = args[0];
+	// https://class.coursera.org/cloudapplications-001/forum/thread?thread_id=1387
+        // String test_data_path = args[0];
+        String test_data_path = args[1];
 
         SparkConf sparkConf = new SparkConf().setAppName("NaiveBayesExample");
         JavaSparkContext sc = new JavaSparkContext(sparkConf);
 
         JavaRDD<LabeledPoint> train = sc.textFile(training_data_path).map(new DataToPoint());
-        JavaRDD<LabeledPoint> test = sc.textFile(training_data_path).map(new DataToPoint());
+        // JavaRDD<LabeledPoint> test = sc.textFile(training_data_path).map(new DataToPoint());
+        JavaRDD<LabeledPoint> test = sc.textFile(test_data_path).map(new DataToPoint());
 
         final NaiveBayesModel model = NaiveBayes.train(train.rdd(), 1.0);
 
