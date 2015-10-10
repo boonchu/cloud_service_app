@@ -75,7 +75,7 @@ public class ShortestPathsComputation extends BasicComputation<
 	//
 	// modify the example code with Giraph to make it read in the IntIntNullTextInputFormat input and 
 	// set 1 to any edge value.
-        int distance = minDist + edge.getValue().get();
+        int distance = minDist + 1;
 
         if (LOG.isDebugEnabled()) {
           LOG.debug("Vertex " + vertex.getId() + " sent to " + edge.getTargetVertexId() + " = " + distance);

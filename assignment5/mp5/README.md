@@ -98,8 +98,16 @@
 ```
 ...
 # *** output data ***
+6	1
+5	2
 0	2
-8 	2147483647
+8	2147483647
+7	2147483647
+2	1
+1	2
+9	2147483647
+3	0
+4	1
 ...
 ```
 
@@ -112,9 +120,46 @@
    * NOTE input: The data input format is similar to the format used with the Connected Components part of Tutorial 5: Introduction to MLlib in that each line has a feature set with a last number corresponding to label (0 or 1), for instance:
    * Note output: The output will be the result of testing the trained model on a testing dataset. Results for each sample in the testing data set will include the predicted label and the actual label along with the feature set, for example:
 
+###### Advisory from Part D:
+
+```
+It is "new Function<Vector, LabeledPoint>" because you input a Vector with the features to classify and returns a LabeledPoint which is the predicted classification result (here called the "label"). So I think your problem is the variable types your are using in your parsed data.
+
+Here is a hint:
+
+   - Parse the training data into a JavaRDD<LabeledPoint> variable. You can do it with a minor modification to one of the parser classes provided in the KMeans example. Check the JavaDoc for the LabeledPoint constructor. Note that you need a LabeledPoint because to train your classifier you need to relate a set of "features" with a "label". (and also is the parameter type requested by the training method of Point 3 below)
+   - Parse the test data into a JavaRDD<Vector> variable called "test". Check the Kmeans example to get inspiration on how to do this. Note in this case you just need the "features" (Vector), the "label" with be predicted by your classifier. 
+   - Use your training data to train the classifier. Read the JavaDoc for RandomForest to get inspiration on how to do this.
+
+If you check JavaDoc (https://spark.apache.org/docs/1.0.1/api/java/org/apache/spark/mllib/regression/LabeledPoint.html) for LabeledPoint, you'll see this constructor:
+
+LabeledPoint(double label, Vector features) 
+
+You are calling it this way:
+
+LabeledPoint(new ParseTitle(line), new ParsePoint(line))
+
+As first parameter you are passing an instance of ParseTitle while the compiler is expecting a double (the label). Similarly compiler is expecting a Vector (the features) as second param and you are passing an instance of ParsePoint. That is the reason why the compiler is complaining. 
+
+So what you should have done is, inside your overridden method call inside your class ParseLabeledPoint, read the string that you receive as input and instantiate a LabeledPoint with the info contained in that string. (split string by commas then Vector=[0-n-1] item, Double=n item (last item)).
+
+Once done, use your ParseLabeledPoint to parse your training data and use your class ParsePoint to parse your test data. (Discard your ParseTitle as you do not need it for this assignment).
+
+```
+
+   * Output results
+
 ```
 ...
 (1.0,[1.0,122.0,84.0,47.0,240.0,45.8,0.551,31.0])
 (0.0,[5.0,110.0,80.0,35.0,3.0,29.0,0.263,29.0])
+(0.0,[13.0,140.0,94.0,34.0,146.0,36.6,0.254,51.0])
+(0.0,[2.0,110.0,92.0,18.0,10.0,22.7,0.235,48.0])
+(1.0,[6.0,141.0,110.0,24.0,20.0,45.4,0.721,54.0])
+(0.0,[1.0,110.0,74.0,18.0,60.0,30.5,0.285,26.0])
+(0.0,[2.0,118.0,88.0,39.0,10.0,36.5,1.057,37.0])
+(0.0,[6.0,125.0,72.0,0.0,0.0,26.3,0.258,52.0])
+(0.0,[1.0,126.0,60.0,0.0,0.0,30.1,0.349,47.0])
+(0.0,[1.0,93.0,70.0,31.0,0.0,30.4,0.315,23.0])
 ...
 ```
